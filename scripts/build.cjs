@@ -28,4 +28,4 @@ for(const file of ['index.html','beyond-v4.css','beyond-v5.css','beyond-v6.css',
 fs.copyFileSync('js/beyond.bundle.js','dist/js/beyond.bundle.js');
 fs.cpSync('assets/noor','dist/assets/noor',{recursive:true});
 fs.cpSync('assets/beyond','dist/assets/beyond',{recursive:true});
-fs.copyFileSync('assets/audio/A_Canopy_of_White_Roses.mp3','dist/assets/audio/A_Canopy_of_White_Roses.mp3');
+fs.copyFileSync('assets/audio/Noor_Mahal_Chal.mp3','dist/assets/audio/Noor_Mahal_Chal.mp3');
