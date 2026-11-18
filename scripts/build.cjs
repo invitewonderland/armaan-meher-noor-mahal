@@ -22,7 +22,7 @@ if(output!==path.join(workspace,'dist')||fs.existsSync(output)&&fs.lstatSync(out
 fs.rmSync(output,{recursive:true,force:true});
 fs.mkdirSync('dist/js',{recursive:true});
 fs.mkdirSync('dist/assets/audio',{recursive:true});
-for(const file of ['index.html','beyond-v4.css','noor-fonts.css','manifest.webmanifest','THREE-LICENSE.txt','.nojekyll']){
+for(const file of ['index.html','beyond-v4.css','beyond-v5.css','noor-fonts.css','manifest.webmanifest','THREE-LICENSE.txt','.nojekyll']){
   fs.copyFileSync(file,path.join('dist',file));
 }
 fs.copyFileSync('js/beyond.bundle.js','dist/js/beyond.bundle.js');

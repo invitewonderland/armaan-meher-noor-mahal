@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f5efdf">
+  <meta name="theme-color" content="#103f36">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Armaan & Meher">
   <meta name="description" content="Armaan Singh & Meher Kaur. An invitation to a whole world of love. 18–20 December 2026 · Noor Mahal, Patiala. An original experience by Invite Wonderland.">
@@ -15,12 +15,13 @@
   <link rel="canonical" href="https://invitewonderland.github.io/armaan-meher-noor-mahal/">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/noor/monogram.svg" type="image/svg+xml">
-  <link rel="preload" as="font" href="assets/beyond/fonts/bodoni.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="assets/beyond/fonts/fraunces.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/beyond/hall-v4.webp" fetchpriority="high">
   <link rel="preload" as="font" href="assets/beyond/fonts/dm-sans.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="noor-fonts.css">
   <link rel="stylesheet" href="beyond-v4.css">
-  <title>Armaan & Meher · Beyond Infinity</title>
+  <link rel="stylesheet" href="beyond-v5.css">
+  <title>Armaan & Meher · Noor Mahal</title>
   <script defer src="js/beyond.bundle.js"></script>
 </head>
 <body>
@@ -74,14 +75,14 @@
 
     <section class="room blessing" data-room="4" aria-labelledby="blessingTitle" hidden inert tabindex="-1">
       <div class="blessing-copy room-copy"><p class="eyebrow">IV · A PHULKARI OF BLESSINGS</p><h2 id="blessingTitle">Your words.<br>Our <em>beautiful thread.</em></h2><p class="body-copy">In the spirit of phulkari, every blessing<br>becomes a pattern shaped by your own words.</p></div>
-      <div class="phulkari-wrap" id="phulkariWrap"><div class="fabric-top"></div><canvas id="phulkariCanvas" aria-label="A phulkari-inspired embroidery that is individually shaped by the words of your blessing"></canvas><div class="fabric-fringe" aria-hidden="true"></div><span class="fabric-signature">WOVEN WITH LOVE · A & M</span></div>
-      <form id="blessingForm" class="blessing-form"><div class="input-row"><label for="guestName">YOUR NAME <small>OPTIONAL</small></label><input id="guestName" maxlength="40" autocomplete="given-name" placeholder="A name they love…"></div><div class="input-row"><label for="blessingText">A FEW WORDS FROM YOUR HEART</label><textarea id="blessingText" maxlength="180" rows="2" required placeholder="May your forever be filled with…"></textarea></div><button class="solid-button" type="submit">Turn my words into a little wonder <svg aria-hidden="true"><use href="#flower"/></svg></button><p class="privacy-note">A private keepsake. Saved only on this device.</p></form>
+      <div class="phulkari-wrap" id="phulkariWrap"><div class="fabric-top"></div><span class="loom-jewel" aria-hidden="true">✧</span><canvas id="phulkariCanvas" aria-label="A phulkari-inspired embroidery that is individually shaped by the words of your blessing"></canvas><div class="fabric-fringe" aria-hidden="true"></div><span class="fabric-signature">WOVEN WITH LOVE · A & M</span></div>
+      <form id="blessingForm" class="blessing-form"><div class="input-row"><label for="guestName">YOUR NAME <small>OPTIONAL</small></label><input id="guestName" maxlength="40" autocomplete="given-name" placeholder="A name they love…"></div><div class="input-row"><label for="blessingText">A FEW WORDS FROM YOUR HEART</label><textarea id="blessingText" maxlength="180" rows="2" required placeholder="May your forever be filled with…"></textarea></div><button class="solid-button" type="submit">Weave my blessing <svg aria-hidden="true"><use href="#flower"/></svg></button><p class="privacy-note">A private keepsake. Saved only on this device.</p></form>
       <div class="blessing-result" id="blessingResult" hidden><p class="eyebrow">NOW YOUR LOVE IS PART OF THE PATTERN</p><blockquote id="savedBlessing" tabindex="0"></blockquote><p id="savedGuest"></p><div class="blessing-actions"><button class="line-button" id="saveBlessing">Keep this little wonder <span aria-hidden="true">↓</span></button><button class="line-button" id="anotherBlessing">Weave another <span aria-hidden="true">↗</span></button></div><button class="clear-blessings" id="clearBlessings">Clear my saved blessings</button><p class="privacy-note" id="blessingPrivacy">Saved only on this device.</p></div>
     </section>
 
     <section class="room letter" data-room="5" aria-labelledby="letterTitle" hidden inert tabindex="-1">
       <figure class="ceremony-photo heirloom-photo"><div class="photo-inner"><img id="ceremonyImage" src="assets/noor/anand-thumb.webp" alt="Armaan and Meher seated together during their Anand Karaj beneath a golden canopy" width="1254" height="1254" decoding="async"></div><figcaption><span>Anand Karaj</span><svg aria-hidden="true"><use href="#flower"/></svg></figcaption><button class="photo-enlarge" id="enlargeCeremony" aria-label="View the complete Anand Karaj photograph"><svg aria-hidden="true"><use href="#fullscreenIcon"/></svg></button></figure>
-      <div class="royal-letter" id="royalLetter"><div class="letter-border" aria-hidden="true"></div><svg class="letter-flower" aria-hidden="true"><use href="#flower"/></svg><p class="eyebrow">V · A LETTER FROM OUR HEARTS</p><h2 id="letterTitle">The greatest gift<br>is <em>having you there.</em></h2><p class="letter-names">Armaan Singh <i>&</i> Meher Kaur</p><p class="body-copy">With the blessings of our families,<br>we invite you to celebrate our wedding.</p><div class="letter-date"><strong>20</strong><div><span>DECEMBER 2026</span><p>Sunday · Anand Karaj · 10:00 AM</p></div></div><p class="letter-place">The Darbar Sahib · Noor Mahal, Patiala</p><p class="script">Our celebration is incomplete without you.</p><div class="letter-actions"><button class="solid-button" id="openKeepsake">A little piece of our forever <svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="line-button" id="ceremonyCalendar">Keep the date <span aria-hidden="true">↓</span></button></div><span class="letter-footnote">18–20 DECEMBER · THREE DAYS TO REMEMBER</span></div>
+      <div class="royal-letter" id="royalLetter"><div class="letter-border" aria-hidden="true"></div><svg class="letter-flower" aria-hidden="true"><use href="#flower"/></svg><p class="eyebrow">V · A LETTER FROM OUR HEARTS</p><h2 id="letterTitle">The greatest gift<br>is <em>having you there.</em></h2><p class="letter-names">Armaan Singh <i>&</i> Meher Kaur</p><p class="body-copy">With the blessings of our families,<br>we invite you to celebrate our wedding.</p><div class="letter-date"><strong>20</strong><div><span>DECEMBER 2026</span><p>Sunday · Anand Karaj · 10:00 AM</p></div></div><p class="letter-place">The Darbar Sahib · Noor Mahal, Patiala</p><p class="script">Our celebration is incomplete without you.</p><div class="letter-actions"><button class="solid-button" id="openKeepsake">A little piece of our forever <svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="line-button" id="ceremonyCalendar">Keep the date <span aria-hidden="true">↓</span></button></div><span class="letter-footnote">18–20 DECEMBER · THREE DAYS TO REMEMBER</span><span class="letter-seal" aria-hidden="true">A <i>&</i> M</span></div>
     </section>
 
     <section class="room forever" data-room="6" aria-labelledby="foreverTitle" hidden inert tabindex="-1">
@@ -99,7 +100,23 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div><div class="sr-only" id="announcement" aria-live="polite" aria-atomic="true"></div>
 </div>
 
-<dialog class="event-dialog" id="eventDialog" aria-labelledby="dialogEventTitle"><button class="dialog-close" data-close-dialog aria-label="Close celebration invitation">×</button><svg class="dialog-flower" aria-hidden="true"><use href="#flower"/></svg><p class="eyebrow">WITH ALL OUR LOVE, YOU ARE INVITED</p><h2 id="dialogEventTitle">The Mehndi</h2><p class="dialog-verse" id="dialogEventLine"></p><dl class="event-facts"><div><dt>WHEN</dt><dd id="dialogEventDate"></dd></div><div><dt>WHERE</dt><dd id="dialogEventVenue"></dd></div><div><dt>THE MOOD</dt><dd id="dialogEventDress"></dd></div></dl><button id="downloadCalendar" class="solid-button">Add this moment to your calendar <span aria-hidden="true">↓</span></button><p class="dialog-signature">With love, the Singh & Kaur families.</p></dialog>
+<dialog class="event-dialog" id="eventDialog" aria-labelledby="dialogEventTitle" data-celebration="0">
+  <button class="dialog-close" data-close-dialog aria-label="Close celebration invitation">×</button>
+  <div class="event-invitation-head">
+    <div class="invitation-emblem" aria-hidden="true"><svg><use href="#flower"/></svg><span>A <i>&</i> M</span></div>
+    <p class="eyebrow">WITH ALL OUR LOVE, YOU ARE INVITED</p>
+    <h2 id="dialogEventTitle">The Mehndi</h2>
+    <p class="dialog-verse" id="dialogEventLine"></p>
+    <span class="invitation-edition">NOOR MAHAL · THE CELEBRATIONS</span>
+  </div>
+  <div class="event-card-body">
+    <figure class="invitation-portrait"><img id="dialogEventImage" src="assets/noor/mehndi-thumb.webp" width="1254" height="1254" alt="Armaan and Meher celebrating their Mehndi"><figcaption>Armaan & Meher</figcaption></figure>
+    <p class="invitation-dedication">One beautiful moment.<br>Made complete by you.</p>
+    <dl class="event-facts"><div><dt>WHEN</dt><dd id="dialogEventDate"></dd></div><div><dt>WHERE</dt><dd id="dialogEventVenue"></dd></div><div><dt>THE MOOD</dt><dd id="dialogEventDress"></dd></div></dl>
+    <button id="downloadCalendar" class="solid-button">Add this moment to your calendar <span aria-hidden="true">↓</span></button>
+    <p class="dialog-signature">With love, the Singh & Kaur families.</p>
+  </div>
+</dialog>
 <dialog class="photo-dialog" id="photoDialog" aria-labelledby="fullPhotoCaption"><button class="dialog-close" data-close-dialog aria-label="Close complete photograph">×</button><img id="fullPhoto" src="assets/noor/together-thumb.webp" alt="" width="1199" height="1312"><div class="full-photo-caption"><button id="fullPhotoPrevious" aria-label="Previous full photograph">‹</button><p id="fullPhotoCaption">Where the world feels like home.</p><button id="fullPhotoNext" aria-label="Next full photograph">›</button></div><span id="fullPhotoCount">01 / 08</span></dialog>
 <dialog class="keepsake-dialog" id="keepsakeDialog" aria-label="Your portrait keepsake"><button class="dialog-close" data-close-dialog aria-label="Close portrait keepsake">×</button><p class="eyebrow">A LITTLE PIECE OF OUR FOREVER</p><div class="keepsake-preview"><img id="keepsakeImage" alt="An ivory and gold invitation keepsake with the complete portrait of Armaan and Meher"></div><button class="solid-button" id="downloadKeepsake">Save our portrait <span aria-hidden="true">↓</span></button><p class="privacy-note">MADE TO KEEP CLOSE. AND SHARE WITH LOVE.</p></dialog>
 <dialog class="share-dialog" id="shareDialog" aria-labelledby="shareTitle"><button class="dialog-close" data-close-dialog aria-label="Close invitation sharing">×</button><svg class="dialog-flower" aria-hidden="true"><use href="#flower"/></svg><p class="eyebrow">A LITTLE WONDER, MEANT TO BE SHARED</p><h2 id="shareTitle">Love travels<br><em>beautifully.</em></h2><p class="dialog-verse">Invite someone into our forever.</p><p class="share-names">Armaan Singh <i>&</i> Meher Kaur</p><label for="shareLink">THE INVITATION LINK</label><input id="shareLink" readonly value="https://invitewonderland.github.io/armaan-meher-noor-mahal/"><div class="share-actions"><button class="solid-button" id="copyInvitation">Copy invitation link <span aria-hidden="true">↗</span></button><button class="line-button" id="nativeShare" hidden>Share with love <svg aria-hidden="true"><use href="#arrow"/></svg></button></div><p class="share-feedback" id="shareFeedback" role="status" aria-live="polite">18–20 December 2026 · Patiala</p></dialog>

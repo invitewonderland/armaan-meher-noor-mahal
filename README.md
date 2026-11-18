@@ -1,4 +1,4 @@
-# Armaan & Meher — Noor Mahal / The Living Heirloom
+# Armaan & Meher — Noor Mahal / The Royal Atelier
 
 A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. This is a complete new experience built on the Project Infinity technical foundation, with eight intact couple photographs, original palace environments and seven connected rooms.
 
@@ -15,6 +15,10 @@ A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. Th
 7. **Beyond forever.** Golden infinity ribbons and rising points of light surround the complete couple portrait. Let their forever take flight, share the invitation, or experience the palace again.
 
 A fine golden thread, a silk-like light veil and three architectural archways connect the rooms. Physical columns and hanging glass lanterns add a foreground depth layer. Touching the palace water sends expanding ripples into the reflection. The dhol now floats above a dimensional emerald-and-gold ceremonial platform whose rings respond to each note. A sixteen-petal lotus sculpture surrounds the final portrait and opens into the rising constellation. The palace transforms between the mirrored hall, dawn courtyard, luminous blue hour and moonlit water garden. These effects support the place and story; the guest controls the pace.
+
+## Royal Atelier refinement
+
+Solid ivory gate lettering with horizontal family names, fuller Fraunces display type, themed celebration folios and portrait invitation cards, a gilded embroidery loom with dimensional stitches, and a portrait-topped formal letter. Text sits on intentionally lit ivory or emerald surfaces. One-pass floor caustics and peripheral mirror glints share the existing shaders; no extra renderer or particle system.
 
 ## Controls
 
@@ -56,7 +60,7 @@ Event instants, venues and attire are in `src/noor/story.mjs`. The opening, form
 
 The eight production portraits in `assets/beyond/portraits/` preserve the original dimensions and every decoded RGB pixel of the supplied PNGs. Their originals remain untouched in the local workspace. They have no face retouching, generative alterations, filters, clip paths or crop transformations. The fitted image box follows the source ratio. Smaller previews are used only for the thumbnail rail and loading/error fallbacks. Complete 840-pixel previews load promptly during the sealed opening and gallery selection; the lossless original upgrades the same frame in the background. Opening never waits for that large master. One adjacent small preview is prefetched as the gallery is explored; full-image views and keepsake exports use the lossless original.
 
-Bodoni Moda and DM Sans form the new optical-size-aware typography system, bundled as WOFF2 with their SIL licenses. Noto Serif Gurmukhi preserves the Punjabi dedication.
+Fraunces and DM Sans form the new optical-size-aware typography system, bundled as WOFF2 with their SIL licenses. Noto Serif Gurmukhi preserves the Punjabi dedication.
 
 The palace plates are original generated environment artwork; they do not depict an actual booked venue. See [new artwork prompts and provenance](assets/beyond/ARTWORK-V4.md) and [foundation environments](assets/beyond/ARTWORK.md). The user-supplied score, *A Canopy of White Roses*, is carried forward from the foundation. Fonts and media are hosted with the invitation.
 
