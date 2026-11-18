@@ -1,10 +1,10 @@
 {
   "name": "armaan-meher-noor-mahal",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "Noor Mahal: a luminous royal Punjabi wedding experience by Invite Wonderland.",
+  "description": "Project Beyond Infinity: a living royal Punjabi palace for Armaan Singh and Meher Kaur, by Invite Wonderland.",
   "scripts": {
-    "test": "node --test tests/noor.test.mjs",
+    "test": "node --test tests/beyond.test.mjs",
     "start": "python -m http.server 4187 --bind 127.0.0.1",
     "build": "node scripts/build.cjs"
   },

@@ -1,16 +1,17 @@
-# Noor Mahal — mobile recording notes
+# Beyond Infinity — mobile recording notes
 
-Use a portrait phone, turn off notifications, set comfortable media volume, and record internal browser audio where the device permits it. Use the browser's fullscreen or add the invitation to the home screen where supported.
+Open the live invitation on a portrait phone, turn off notifications and set comfortable media volume. Use native fullscreen or the home-screen presentation when the browser supports it. Record internal browser audio where the device permits it.
 
-A suggested 30–40 second sequence:
+Suggested 40–50 second edit:
 
-1. Let the ivory-and-gold cover breathe for two seconds, then touch the monogram seal.
-2. In the portrait salon, choose the bride, groom and dancing portraits.
-3. Open the Punjab chapter and make the fields dance.
-4. Visit the celebrations; switch from Mehndi to Anand Karaj.
-5. Play three dhol beats and start the celebration rhythm.
-6. Weave a short blessing into the phulkari.
-7. Open the formal invitation and its keepsake.
-8. Arrive at the finale, touch “Let love bloom”, then give the light sculpture a few seconds to form.
+1. Hold the radiant palace doors for two seconds. Touch the gold monogram seal and let both leaves open completely.
+2. In the story room, show the complete palace portrait, the bride, the groom and the mustard-field moment. Let a selected frame settle before changing it.
+3. Enter the celebrations. Change Mehndi to Sangeet, then Anand Karaj. Open the ceremony invitation briefly.
+4. In the rang mahal, play Dha–Na–Tin. Replay your own phrase while the dhol responds. Mute or leave the room to stop it.
+5. Write a short personal blessing. Leave about three seconds for the thread to grow across the phulkari, then show the keepsake action.
+6. Let the formal invitation unfold. Open the portrait keepsake.
+7. Enter the finale. Touch “Let our forever take flight” and hold for six seconds as the gold rises around their complete portrait.
 
-The experience has no auto-tour. Advance when the shot feels right. Keep faces and typography in the frame. Device recording, audio capture and social-platform compression need to be checked on the actual phone. No engagement or viral result is guaranteed.
+The experience is manually paced. It has no forced auto-tour or timed slide advance. Use its room map to revisit a moment for another take. A blessing is private to that browser; clear a sample using the visible “Clear my saved blessings” action after recording. “Feel it again” resets the palace, score and finale while keeping any deliberately saved blessing.
+
+Check recording, audio capture, browser chrome and social-platform compression on the actual device. The source images stay intact; editing or platform crops should preserve the couple's intended composition.

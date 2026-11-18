@@ -1,0 +1,58 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import * as T from 'three';
+import {rooms,photos,events,calendarFor,cleanBlessing,readBlessings,storageKey,seedFromWords,randomFor} from '../src/beyond/story.mjs';
+import {fitPhotoBox} from '../src/beyond/layout.mjs';
+import {LivingPhulkari,wrapCanvasText} from '../src/beyond/phulkari.mjs';
+import {batchStatic} from '../src/beyond/world.mjs';
+
+test('every complete photograph fits its frame without changing its proportions',()=>{
+ for(const [w,h] of [[320,568],[375,667],[390,844],[820,1180],[844,390],[1440,1000],[240,110]])for(const aspect of [1199/1312,1]){
+  const fit=fitPhotoBox(w,h,aspect,18,42);assert.ok(fit);assert.ok(fit.width<=w+1e-8);assert.ok(fit.height<=h+1e-8);assert.ok(Math.abs(fit.photoWidth/fit.photoHeight-aspect)<1e-10);assert.equal(fit.height-fit.photoHeight,42);
+ }
+ assert.equal(fitPhotoBox(10,10,1,20,20),null);assert.equal(fitPhotoBox(200,300,0,10,40),null);
+});
+test('all seven rooms and eight full-resolution portraits are packaged with the new experience',()=>{
+ const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');assert.equal(rooms.length,7);assert.equal(photos.length,8);assert.equal(new Set(photos.map(photo=>photo.file)).size,8);
+ assert.equal((html.match(/class="room /g)||[]).length,7);assert.match(html,/beyond\.bundle\.js/);assert.doesNotMatch(html,/noor\.bundle\.js|Santorini|Anirudh|Kavya/);
+ for(const photo of photos){assert.ok(photo.width>1100&&photo.height>1100);assert.ok(fs.statSync(new URL(`../assets/beyond/portraits/${photo.file}.webp`,import.meta.url)).size>1000000);}
+ for(const match of html.matchAll(/(?:src|href)="([^"?#]+)(?:\?[^"#]*)?"/g)){const path=match[1];if(!/^(https?:|#|blob:)/.test(path))assert.ok(fs.existsSync(new URL('../'+path,import.meta.url)),path);}
+});
+test('calendar downloads preserve the authorised December dates and India time',()=>{
+ assert.equal(events.length,4);const cal=calendarFor(events[2],new Date('2026-11-18T00:00:00Z'));assert.match(cal,/DTSTART:20261220T043000Z/);assert.match(cal,/DTEND:20261220T063000Z/);assert.match(cal,/LOCATION:The Darbar Sahib\\, Noor Mahal\\, Patiala/);
+ for(const event of events){const date=new Date(event.start);assert.equal(date.getUTCFullYear(),2026);assert.equal(date.getUTCMonth(),11);assert.ok(Date.parse(event.start)>Date.parse('2026-12-17'));}
+ const attack={...events[0],name:'ਮੇਹਰ — '+'love'.repeat(35),line:'Love, joy; peace\nBEGIN:ATTACK'};const output=calendarFor(attack),lines=output.split('\r\n').filter(Boolean);assert.ok(lines.every(line=>Buffer.byteLength(line,'utf8')<=75));assert.ok(!lines.includes('BEGIN:ATTACK'));assert.match(output.replace(/\r\n /g,''),/Love\\, joy\\; peace\\nBEGIN:ATTACK/);
+});
+test('a blessing makes a repeatable individual pattern and long words fit the exported card',()=>{
+ const a=seedFromWords('Meher · Love & light'),b=seedFromWords('Armaan · Love & light');assert.notEqual(a,b);assert.equal(a,seedFromWords('Meher · Love & light'));assert.notEqual(seedFromWords('ਪਿਆਰ'),seedFromWords('ਪ੍ਰੇਮ'));
+ const artA=LivingPhulkari.prototype.pattern.call({seed:a,complete:true},400,500),artB=LivingPhulkari.prototype.pattern.call({seed:b,complete:true},400,500);assert.notDeepEqual(artA.map(p=>[p.x1,p.y1,p.x2,p.y2]),artB.map(p=>[p.x1,p.y1,p.x2,p.y2]));
+ const r1=randomFor(a),r2=randomFor(a);assert.deepEqual(Array.from({length:12},r1),Array.from({length:12},r2));
+ const context={measureText:text=>({width:Array.from(text).length*8})};const lines=wrapCanvasText(context,'A beautiful tomorrow '+ 'x'.repeat(90)+' 💛 together',120);assert.ok(lines.every(line=>context.measureText(line).width<=120));assert.equal(lines.join('').replaceAll(' ',''),('A beautiful tomorrow '+'x'.repeat(90)+' 💛 together').replaceAll(' ',''));
+});
+test('private blessing history handles corrupt or denied storage and remains bounded',()=>{
+ assert.deepEqual(readBlessings({getItem(){throw Error('denied')}}),[]);assert.deepEqual(readBlessings({getItem:()=>'{broken'}),[]);assert.deepEqual(readBlessings({getItem:()=>'{}'}),[]);
+ const list=Array.from({length:14},(_,i)=>({name:'  Guest '+i+' ',text:'  Love '+i+' '}));const result=readBlessings({getItem:()=>JSON.stringify(list)});assert.equal(result.length,8);assert.equal(result[0].text,'Love 6');assert.equal(result.at(-1).name,'Guest 13');assert.equal(cleanBlessing('a'.repeat(90),'b'.repeat(300)).text.length,180);
+});
+test('geometry batching preserves the sculpture and the independent door hinges',()=>{
+ const scene=new T.Scene(),root=new T.Group(),hinge=new T.Group(),material=new T.MeshStandardMaterial();root.position.set(4,2,-1);root.rotation.y=.3;root.scale.setScalar(1.2);scene.add(root);root.add(hinge);hinge.position.x=-2;
+ for(let i=0;i<4;i++){const mesh=new T.Mesh(i%2?new T.BoxGeometry(1,.2,.3):new T.SphereGeometry(.3,10,8),material);mesh.position.set(i-.5,i*.2,.1*i);root.add(mesh);}const door=new T.Mesh(new T.BoxGeometry(.2,3,1),material);hinge.add(door);scene.updateMatrixWorld(true);const before=new T.Box3().setFromObject(root,true);batchStatic(root,new Set([hinge]));scene.updateMatrixWorld(true);const after=new T.Box3().setFromObject(root,true);assert.ok(before.min.distanceTo(after.min)<1e-5);assert.ok(before.max.distanceTo(after.max)<1e-5);assert.equal(hinge.children[0],door);assert.equal(root.children.filter(node=>node.isMesh).length,1);hinge.rotation.y=.7;scene.updateMatrixWorld(true);assert.equal(door.parent,hinge);
+});
+test('the full semantic journey, complete-photo viewer, event tabs, blessings and replay work without WebGL',async()=>{
+ const {Window}=await import('happy-dom');const win=new Window({url:'http://localhost/',settings:{disableCSSFileLoading:true,disableJavaScriptFileLoading:true}});win.document.write(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8').replace(/<script[^>]*>[\s\S]*?<\/script>/g,''));
+ const noop=()=>{},gradient={addColorStop:noop},ctx=new Proxy({createLinearGradient:()=>gradient,createRadialGradient:()=>gradient,measureText:text=>({width:Array.from(text).length*8})},{get:(target,key)=>target[key]??noop,set:(target,key,value)=>{target[key]=value;return true;}});
+ win.HTMLCanvasElement.prototype.getContext=function(type){return type==='2d'?ctx:null;};win.HTMLImageElement.prototype.decode=()=>Promise.resolve();win.HTMLMediaElement.prototype.play=()=>Promise.resolve();win.HTMLMediaElement.prototype.pause=noop;win.matchMedia=()=>({matches:true,addEventListener:noop,removeEventListener:noop});let copied='';Object.defineProperty(win.navigator,'clipboard',{value:{writeText:async value=>{copied=value;}}});
+ const original=new Map(),globals={window:win,document:win.document,navigator:win.navigator,localStorage:win.localStorage,location:win.location,devicePixelRatio:1,innerWidth:390,innerHeight:844,Image:win.Image,ResizeObserver:class{observe(){}disconnect(){}},matchMedia:win.matchMedia.bind(win),getComputedStyle:win.getComputedStyle.bind(win),setTimeout:win.setTimeout.bind(win),clearTimeout:win.clearTimeout.bind(win),requestAnimationFrame:callback=>win.setTimeout(()=>callback(performance.now()),0),cancelAnimationFrame:win.clearTimeout.bind(win)};
+ for(const[key,value]of Object.entries(globals)){original.set(key,Object.getOwnPropertyDescriptor(globalThis,key));Object.defineProperty(globalThis,key,{value,writable:true,configurable:true});}
+ try{
+  await import('../src/beyond/main.mjs?test='+Date.now());const d=win.document,click=selector=>d.querySelector(selector).click(),settle=()=>new Promise(resolve=>setTimeout(resolve,12));
+  assert.equal(d.querySelector('#experience').dataset.ready,'true');assert.ok(d.querySelector('#experience').classList.contains('gpu-fallback'));click('#enterPalace');await settle();assert.equal(d.querySelector('#experience').dataset.room,'1');
+  click('#photoRail button:nth-child(8)');await settle();assert.match(d.querySelector('#storyImage').src,/beyond\/portraits\/anand\.webp$/);assert.equal(d.querySelector('#storyImage').getAttribute('width'),'1254');click('#enlargePhoto');await settle();assert.equal(d.querySelector('#photoDialog').open,true);assert.match(d.querySelector('#fullPhoto').src,/anand\.webp$/);d.querySelector('#photoDialog').close();
+  click('#previousRoom');assert.equal(d.querySelector('#experience').dataset.room,'0');click('#enterPalace');await settle();assert.equal(d.querySelector('#experience').dataset.room,'1');
+  click('#journeyPips button:nth-child(3)');await settle();click('#eventTab2');await settle();assert.match(d.querySelector('#eventTitle').textContent,/Anand Karaj/);assert.equal(d.querySelector('#eventTab2').tabIndex,0);assert.equal(d.querySelector('#eventTab0').tabIndex,-1);click('#eventDetails');assert.equal(d.querySelector('#eventDialog').open,true);assert.match(d.querySelector('#dialogEventDate').textContent,/10:00 AM IST/);d.querySelector('#eventDialog').close();
+  click('#journeyPips button:nth-child(4)');click('[data-drum="0"]');click('[data-drum="2"]');assert.equal(d.querySelector('#playMyRhythm').disabled,false);assert.equal(d.querySelectorAll('#beatRibbon .is-played').length,2);
+  click('#journeyPips button:nth-child(5)');d.querySelector('#guestName').value='<svg onload=bad>';d.querySelector('#blessingText').value='<script>bad</script> Love & light.';d.querySelector('#blessingForm').dispatchEvent(new win.Event('submit',{bubbles:true,cancelable:true}));assert.equal(d.querySelector('#savedBlessing').textContent,'<script>bad</script> Love & light.');assert.equal(d.querySelector('#savedBlessing script'),null);assert.equal(readBlessings(win.localStorage).length,1);assert.equal(d.querySelector('#blessingForm').hidden,true);click('#clearBlessings');assert.equal(win.localStorage.getItem(storageKey),null);assert.equal(d.querySelector('#blessingForm').hidden,false);
+  click('#journeyPips button:nth-child(7)');click('#takeFlight');assert.ok(d.querySelector('.forever').classList.contains('is-flying'));click('#shareInvitation');assert.equal(d.querySelector('#shareDialog').open,true);click('#copyInvitation');await settle();assert.equal(copied,'https://invitewonderland.github.io/armaan-meher-noor-mahal/');assert.match(d.querySelector('#shareFeedback').textContent,/copied/);d.querySelector('#shareDialog').close();click('#replay');assert.equal(d.querySelector('#experience').dataset.room,'0');assert.equal(d.querySelectorAll('.room:not([hidden])').length,1);assert.equal(d.querySelectorAll('.room[hidden]:not([inert])').length,0);assert.equal(d.querySelector('#enterPalace').disabled,false);
+  click('#openMap');assert.equal(d.querySelector('#palaceMap').hidden,false);click('#closeMap');assert.equal(d.querySelector('#palaceMap').hidden,true);
+ }finally{await win.happyDOM.abort();for(const[key,descriptor]of original){if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}}
+});

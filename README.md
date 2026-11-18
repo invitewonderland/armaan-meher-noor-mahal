@@ -1,45 +1,47 @@
-# Armaan & Meher — Noor Mahal
+# Armaan & Meher — Project Beyond Infinity
 
-An original royal Punjabi wedding experience by **Invite Wonderland**, built from the Project Infinity foundation and reimagined around eight new couple photographs.
+A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. This is a complete new experience built on the Project Infinity technical foundation, with eight intact couple photographs, original palace environments and seven connected rooms.
 
-Live invitation: https://invitewonderland.github.io/armaan-meher-noor-mahal/
+[Open the invitation](https://invitewonderland.github.io/armaan-meher-noor-mahal/) · [GitHub repository](https://github.com/invitewonderland/armaan-meher-noor-mahal)
 
-Repository: https://github.com/invitewonderland/armaan-meher-noor-mahal
+## Enter the palace
 
-## Open and build
+1. **The royal seal.** A physical ivory-and-gold doorway, engraved names and a monogram seal. Touch the seal to swing the two carved leaves open.
+2. **The story of us.** Eight lyrical photographic moments: the palace, the Punjab countryside, the bride, the groom, Mehndi, Sangeet and the sacred beginning. Every complete photograph has its own fitted gilt mat and an uncluttered full-image viewer.
+3. **The celebrations.** Four photographic invitations for Mehndi, Sangeet, Anand Karaj and Reception. Each contains date, time, venue, attire and an India-time calendar download.
+4. **The rang mahal.** A sculpted lacquer-and-gold dhol, with curved exterior lacing, moving membranes and tassels. Play four synthesised voices, compose a phrase of up to sixteen beats, and replay your own rhythm or the original celebration pattern.
+5. **The blessing.** Your words become a personal phulkari-inspired embroidery. A deterministic pattern grows outward through the cloth. Keep the embroidered card as a 1200 × 1600 PNG.
+6. **A letter from our hearts.** An unfolding formal invitation, the complete Anand Karaj photograph, a calendar action and a 1200 × 1600 portrait keepsake.
+7. **Beyond forever.** Golden infinity ribbons and rising points of light surround the complete couple portrait. Let their forever take flight, share the invitation, or experience the palace again.
 
-The complete static site is in `dist/`. Serve it with:
+A fine golden thread and three architectural archways connect the rooms. The palace passes between warm dawn and luminous blue hour. These effects support the place and story; the guest controls the pace.
 
-```powershell
-python -m http.server 4193 --bind 127.0.0.1 --directory dist
-```
+## Controls
 
-Then open http://127.0.0.1:4193/. The source root can also be served directly. Use Node 20+:
+Use next/back, the seven navigation dots, or the palace title to open the room map. Swipe the background horizontally on touch devices. Swipe a gallery photograph or use its thumbnails to change photographs. Arrow keys navigate; when the gallery controls or full-image viewer have focus, arrows browse photographs. Celebration tabs support arrows, Home and End. A/S/D/F play the dhol.
+
+Sound starts after a guest gesture and has an explicit mute control. Rhythm playback is finite and stops on mute, room exit or page hiding. Native fullscreen is requested where supported; the responsive layout follows the visual viewport and safe areas. Browser chrome, device recording and home-screen support remain controlled by each browser.
+
+Sharing opens a small card with a copyable canonical link, a Copy action, and native sharing where available. No blessing is sent when someone shares the invitation.
+
+## Run, build and test
+
+Use Node 20+ and Python 3:
 
 ```powershell
 npm ci
 npm run build
 npm test
+python -m http.server 4207 --bind 127.0.0.1 --directory dist
 ```
 
-If npm is unavailable but the included dependencies are present, `node scripts/build.cjs` and `node --test tests/noor.test.mjs` perform the same build and active checks.
+Open `http://127.0.0.1:4207/`. The checked-in root is also a complete static site. If npm is not on PATH but dependencies are installed, use `node scripts/build.cjs` and `node --test tests/beyond.test.mjs`.
 
-## The experience
+The build bundles Three.js, hashes browser CSS/JS URLs and regenerates a clean, complete `dist/` directory. There are no runtime CDNs, trackers, analytics, remote forms or backend dependencies.
 
-1. **The first light.** An ivory-and-gold, scalloped palace portrait, engraved names and an animated monogram seal open the story.
-2. **The portrait salon.** Eight intact photographs in a gilded editorial gallery. Mouse movement gives the frame a subtle perspective; touch and keyboard controls select each memory.
-3. **From Punjab, with love.** A sunlit mustard-field portrait, Punjabi dedication and a touch-triggered dance of marigold petals.
-4. **The celebrations.** Four photographic rooms for Mehndi, Sangeet, Anand Karaj and Reception. Each opens its own invitation and a standards-compliant calendar download in India time.
-5. **The heartbeat.** A custom illustrated dhol with four Web Audio percussion voices. Play by touch, A/S/D/F, or a finite original celebration rhythm. Muting, navigating away or hiding the page stops the rhythm.
-6. **The phulkari of wishes.** A procedural embroidered textile lights up around a blessing. Up to eight blessings stay only in the visitor's browser. They can be removed from the visible result; no submissions go to a server.
-7. **An invitation from the heart.** A formal family invitation and a 1200 × 1600 JPEG keepsake generated locally from the supplied portrait.
-8. **Our forever.** Floating photographic keepsakes, a golden monogram and an interactive six-petal light sculpture. Share using the native share sheet or link clipboard, or replay the complete story.
+## Content and photograph integrity
 
-The journey is manually paced. Use next/back, chapter dots, the chapter menu, horizontal background swipes or arrow keys. Native fullscreen is available where supported; the home-screen manifest requests fullscreen presentation. Mobile browser chrome remains controlled by the browser.
-
-## Celebration details
-
-With the user's permission, the creative concept uses **18–20 December 2026**, hosted by **the Singh & Kaur families** at an **imagined Noor Mahal in Patiala**. These are creative invitation details, not a verified venue or booking.
+The authorised creative details are **18–20 December 2026**, **the Singh & Kaur families**, at an **imagined Noor Mahal in Patiala**. They are concept invitation details, not a verified venue or booking.
 
 | Celebration | India time | Imagined palace room |
 | --- | --- | --- |
@@ -48,27 +50,34 @@ With the user's permission, the creative concept uses **18–20 December 2026**,
 | Anand Karaj | Sunday 20 December, 10 AM | The Darbar Sahib |
 | Reception | Sunday 20 December, 7:30 PM | The Palace Gardens |
 
-Event content and calendar instants live in `src/noor/story.mjs`. The opening, formal invitation, metadata and keepsake text also contain the chosen ceremony date. Update all of these together when replacing the concept details.
+Event instants, venues and attire are in `src/noor/story.mjs`. The opening, formal letter, sharing metadata, manifest and keepsakes also contain the concept names/date; update these together when changing the invitation.
 
-## Architecture and quality
+The eight production portraits in `assets/beyond/portraits/` preserve the original dimensions and every decoded RGB pixel of the supplied PNGs. Their originals remain untouched in the local workspace. They have no face retouching, generative alterations, filters, clip paths or crop transformations. The fitted image box follows the source ratio. Smaller previews are used only for the thumbnail rail and loading/error fallbacks. The first complete portrait loads during the sealed opening, with one adjacent portrait prefetched as the gallery is explored.
 
-- `src/noor/experience.mjs`: scene state, queued transitions, gestures, dialogs, gallery, storage, calendar and JPEG export.
-- `src/noor/realm.mjs`: instanced metallic petals, shader stars, a tubular light sculpture and a functional Canvas fallback.
-- `src/noor/sound.mjs`: gesture-unlocked score, synthesised dhol voices and bounded rhythm lifecycle.
-- `src/noor/weave.mjs`: stitched phulkari-inspired Canvas artwork with local bloom animation.
-- `noor.css`, `noor-fonts.css`: responsive compositions and locally bundled fonts.
-- `scripts/build.cjs`: bundles Three.js, adds content hashes to CSS/JS URLs and prepares the complete `dist/`.
+The palace plates are original generated environment artwork; they do not depict an actual booked venue. See [artwork prompts and provenance](assets/beyond/ARTWORK.md). The user-supplied score, *A Canopy of White Roses*, is carried forward from the foundation. Fonts and media are hosted with the invitation.
 
-All eight full-size photographs are optimised WebP copies; the supplied PNG originals in the original workspace’s `assets/punjabi images/` are untouched. The selected soundtrack is the user-supplied **A Canopy of White Roses**, carried forward from the foundation. All runtime assets, including fonts and Three.js, are served locally; there are no runtime CDNs, trackers, remote forms or analytics.
+## Architecture and verification
 
-WebGL uses a maximum pixel ratio of 2, instancing and bounded allocations. Reduced-motion settings preserve the static artwork and every action. Hidden scenes are inert; native dialogs manage focus. Page hiding suspends rendering and audio. The opt-in `?profile=1` writes a 240-frame CPU rendering sample into `#realm[data-profile]`; it is not a GPU benchmark or a physical-phone measurement.
+- `beyond.html`: authored semantic template; the build writes the hashed `index.html`.
+- `beyond.css`: deliberate desktop, tablet, portrait, short-phone and landscape compositions.
+- `src/beyond/main.mjs`: queued navigation, image loading, accessible dialogs, gallery, events, custom rhythm, private keepsakes, sharing and replay.
+- `src/beyond/world.mjs`: Three.js doors, dhol, meadow, infinity/light sculpture, animated environment plates and architectural passages. Static geometry is batched by material while hinges, membranes and tassels remain independent.
+- `src/beyond/layout.mjs`: source-ratio photo mat fitting.
+- `src/beyond/phulkari.mjs`: seeded embroidery, stitch animation and PNG card.
+- `src/beyond/story.mjs`: seven rooms and eight photographic narratives.
+- `src/noor/sound.mjs` and `src/noor/story.mjs`: retained sound/calendar/storage foundations.
+- `tests/beyond.test.mjs`: photograph layout, packaging, calendar/Unicode correctness, embroidery geometry, storage limits, geometry batching and the full GPU-free reduced-motion journey.
 
-The older Infinity source and QA are retained in the original workspace for reference and are not included in this repository or the new static deployment. `qa/noor/` contains the new verification and screenshots. `RECORDING.md` contains a suggested mobile recording sequence.
+The renderer caps pixel ratio at 2. It suspends on page hiding, respects reduced motion and falls back to the photographed palace plus functional HTML when WebGL is unavailable or lost. Hidden rooms are inert; native dialogs manage modal focus. Blessings remain on the visitor's device, bounded to eight, with a visible clear action and an in-memory fallback when storage is denied.
 
-GitHub Pages publishes this invitation from the `codex/noor-mahal` branch, root `/`, in the separate `invitewonderland/armaan-meher-noor-mahal` repository. The ready-built HTML, CSS, JavaScript and media are checked in. After changing source, run the build and tests, then push this branch. The original Project Infinity repository remains unchanged.
+For local diagnostics, `?profile=1` records 240 render samples per room in `#worldCanvas[data-profile]`. This measures CPU submission time in the current browser, not GPU time or physical-phone performance. The local workspace contains the responsive screenshots, source-pixel integrity checks, real-browser interactions and performance notes under `qa/beyond/`. Test evidence does not replace a final device check for a particular phone/browser or recording setup.
 
-The local GitHub publication checkout is `publication/github-pages/`. The earlier owner-only Sites preview is separate; its `.openai/hosting.json` stays in the original workspace and is excluded from this GitHub repository.
+## Publish
+
+GitHub Pages serves **`invitewonderland/armaan-meher-noor-mahal`**, branch **`codex/noor-mahal`**, root **`/`**. The ready-built runtime is checked in. Build and test before pushing that branch.
+
+The local publication checkout is `publication/github-pages/`; it has its own Git remote. The original Project Infinity repository and its source history are retained separately. Do not push this invitation through the original Infinity remote. The earlier private Sites preview is separate from this GitHub deployment.
 
 ## Credits
 
-Three.js is MIT licensed; see `THREE-LICENSE.txt`. Cormorant Garamond, Manrope and Noto Serif Gurmukhi use the included SIL Open Font Licenses under `assets/noor/fonts/`. Brand and commission links lead to https://www.instagram.com/invitewonderland.
+Three.js is MIT licensed; see `THREE-LICENSE.txt`. Cormorant Garamond, Manrope and Noto Serif Gurmukhi include their SIL Open Font Licenses in `assets/noor/fonts/`. All brand and commission links lead to [Invite Wonderland on Instagram](https://www.instagram.com/invitewonderland).
