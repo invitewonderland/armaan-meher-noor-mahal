@@ -2,8 +2,21 @@
 /* Names are removed before the first moving door frame, including on slow devices. */
 .experience[data-phase="opening"] .gate-copy,.experience[data-phase="journey"] .gate-copy{display:none!important;opacity:0!important;visibility:hidden!important;transition:none!important;animation:none!important}
 .gate-copy[hidden]{display:none!important}
-.seal-prompt{display:inline-block;padding:4px 8px 3px;border:1px solid #b58d45;border-radius:2px;background:#fff8e9;color:#123f35;font:700 12px/1.3 var(--sans);letter-spacing:1.1px;text-shadow:none;white-space:nowrap}
-@media(max-width:360px),(orientation:landscape) and (max-height:600px){.seal-prompt{font-size:11px;letter-spacing:.9px;padding:3px 7px}}
+.seal-prompt{
+ display:inline-block;
+ padding:4px 10px;
+ border:1px solid #c39b52;
+ border-radius:3px;
+ background:#10382d;
+ color:#fff8e9;
+ font:750 15px/1.2 var(--sans);
+ letter-spacing:1px;
+ text-shadow:none;
+ white-space:nowrap;
+}
+@media(max-width:360px),(orientation:landscape) and (max-height:600px){
+ .seal-prompt{font-size:14px;letter-spacing:.8px;padding:3px 8px}
+}
 
 /* The photograph is the heart of each open celebration invitation. */
 .event-dialog{width:540px;scrollbar-width:thin;scrollbar-color:#b38a48 #f6e8ce;overscroll-behavior:contain;scroll-padding-top:60px}
