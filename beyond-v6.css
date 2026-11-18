@@ -4,18 +4,24 @@
 .gate-copy[hidden]{display:none!important}
 .seal-prompt{
  display:inline-block;
- padding:4px 10px;
- border:1px solid #c39b52;
- border-radius:3px;
- background:#10382d;
- color:#fff8e9;
- font:750 15px/1.2 var(--sans);
- letter-spacing:1px;
- text-shadow:none;
+ position:relative;
+ isolation:isolate;
+ color:#153e34;
+ font:650 13px/1.35 var(--sans);
+ letter-spacing:.095em;
+ text-shadow:0 1px 2px #fff8e9;
  white-space:nowrap;
 }
+.seal-prompt::before{
+ content:'';
+ position:absolute;
+ inset:-9px -18px;
+ z-index:-1;
+ background:radial-gradient(ellipse,#fff8e9c9 30%,#fff8e979 55%,transparent 76%);
+ pointer-events:none;
+}
 @media(max-width:360px),(orientation:landscape) and (max-height:600px){
- .seal-prompt{font-size:14px;letter-spacing:.8px;padding:3px 8px}
+ .seal-prompt{font-size:12px}
 }
 
 /* The photograph is the heart of each open celebration invitation. */
