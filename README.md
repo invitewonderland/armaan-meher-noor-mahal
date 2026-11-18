@@ -26,6 +26,12 @@ The phulkari uses an all-over bagh-inspired geometric stitch field, including th
 
 The finale adds fine moving gold orbits, restrained carved lotus petals, soft peripheral shader light and a written infinity flourish. These share the existing WebGL renderer and loop. Text has its own foreground stacking layers, separate from the portrait afterglow. Existing room transitions, sound, rhythm, sharing, complete-photo viewer, keepsakes and replay remain available.
 
+## Embroidered blessing messages
+
+The guest's actual words and name are woven directly into a matching silk centre in raised gold lettering. A travelling needle reveals the text line by line; cloth patterns frame the message. Long notes wrap into a larger readable cloth, with internal scrolling on compact screens. Punjabi text and emoji keep their grapheme clusters intact. Saved blessings automatically receive the same presentation without changing the private storage format.
+
+A replay action repeats the weaving. The 1200 × 1600 PNG keepsake contains the embroidered message in its cloth. Cloth, letter silhouettes and satin-thread highlights are cached; animation frames composite those layers instead of measuring or repainting typography. Reduced motion shows the complete blessing immediately. The plain-text transcript remains available to assistive technology.
+
 ## Controls
 
 The portrait itself opens its full-image viewer; pointer movement gives its heirloom frame a subtle optical tilt. Typing a blessing previews its individual embroidery before the guest saves it.
