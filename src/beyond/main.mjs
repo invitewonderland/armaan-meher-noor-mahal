@@ -25,7 +25,7 @@ class PhotoLibrary{
 }
 const library=new PhotoLibrary();
 // The first complete portrait starts loading while the visitor admires the sealed palace.
-const firstPortrait=library.preview('together').then(image=>{setPhotoImage($('#storyImage'),image,photos[0]);setPhotoImage($('#foreverImage'),image,photos[0]);return image;}).catch(()=>null);
+const firstPortrait=library.preview('together').then(image=>{setPhotoImage($('#storyImage'),image,photos[0]);setPhotoImage($('#foreverImage'),image,photos[0]);library.get('together').then(original=>{if(photoIndex===0)setPhotoImage($('#storyImage'),original,photos[0],2);setPhotoImage($('#foreverImage'),original,photos[0],2);}).catch(()=>{});return image;}).catch(()=>null);
 function setPhotoImage(target,image,photo,quality=1){if(target.dataset.photoFile===photo.file&&Number(target.dataset.quality)>quality)return;target.dataset.quality=String(quality);target.src=image.src;target.alt=photo.alt;target.width=photo.width;target.height=photo.height;target.dataset.photoFile=photo.file;schedulePhotoFit();}
 function preloadAdjacent(index){const next=photos[(index+1)%photos.length];library.preview(next.file).catch(()=>{});}
 
