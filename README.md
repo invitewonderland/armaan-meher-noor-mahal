@@ -1,4 +1,4 @@
-# Armaan & Meher — Project Beyond Infinity
+# Armaan & Meher — Noor Mahal / The Living Heirloom
 
 A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. This is a complete new experience built on the Project Infinity technical foundation, with eight intact couple photographs, original palace environments and seven connected rooms.
 
@@ -14,9 +14,11 @@ A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. Th
 6. **A letter from our hearts.** An unfolding formal invitation, the complete Anand Karaj photograph, a calendar action and a 1200 × 1600 portrait keepsake.
 7. **Beyond forever.** Golden infinity ribbons and rising points of light surround the complete couple portrait. Let their forever take flight, share the invitation, or experience the palace again.
 
-A fine golden thread and three architectural archways connect the rooms. The palace passes between warm dawn and luminous blue hour. These effects support the place and story; the guest controls the pace.
+A fine golden thread, a silk-like light veil and three architectural archways connect the rooms. Physical columns and hanging glass lanterns add a foreground depth layer. Touching the palace water sends expanding ripples into the reflection. The dhol now floats above a dimensional emerald-and-gold ceremonial platform whose rings respond to each note. A sixteen-petal lotus sculpture surrounds the final portrait and opens into the rising constellation. The palace transforms between the mirrored hall, dawn courtyard, luminous blue hour and moonlit water garden. These effects support the place and story; the guest controls the pace.
 
 ## Controls
+
+The portrait itself opens its full-image viewer; pointer movement gives its heirloom frame a subtle optical tilt. Typing a blessing previews its individual embroidery before the guest saves it.
 
 Use next/back, the seven navigation dots, or the palace title to open the room map. Swipe the background horizontally on touch devices. Swipe a gallery photograph or use its thumbnails to change photographs. Arrow keys navigate; when the gallery controls or full-image viewer have focus, arrows browse photographs. Celebration tabs support arrows, Home and End. A/S/D/F play the dhol.
 
@@ -54,13 +56,16 @@ Event instants, venues and attire are in `src/noor/story.mjs`. The opening, form
 
 The eight production portraits in `assets/beyond/portraits/` preserve the original dimensions and every decoded RGB pixel of the supplied PNGs. Their originals remain untouched in the local workspace. They have no face retouching, generative alterations, filters, clip paths or crop transformations. The fitted image box follows the source ratio. Smaller previews are used only for the thumbnail rail and loading/error fallbacks. The first complete portrait loads during the sealed opening, with one adjacent portrait prefetched as the gallery is explored.
 
-The palace plates are original generated environment artwork; they do not depict an actual booked venue. See [artwork prompts and provenance](assets/beyond/ARTWORK.md). The user-supplied score, *A Canopy of White Roses*, is carried forward from the foundation. Fonts and media are hosted with the invitation.
+Bodoni Moda and DM Sans form the new optical-size-aware typography system, bundled as WOFF2 with their SIL licenses. Noto Serif Gurmukhi preserves the Punjabi dedication.
+
+The palace plates are original generated environment artwork; they do not depict an actual booked venue. See [new artwork prompts and provenance](assets/beyond/ARTWORK-V4.md) and [foundation environments](assets/beyond/ARTWORK.md). The user-supplied score, *A Canopy of White Roses*, is carried forward from the foundation. Fonts and media are hosted with the invitation.
 
 ## Architecture and verification
 
 - `beyond.html`: authored semantic template; the build writes the hashed `index.html`.
-- `beyond.css`: deliberate desktop, tablet, portrait, short-phone and landscape compositions.
+- `beyond-v4.css`: deliberate desktop, tablet, portrait, short-phone and landscape compositions.
 - `src/beyond/main.mjs`: queued navigation, image loading, accessible dialogs, gallery, events, custom rhythm, private keepsakes, sharing and replay.
+- `src/beyond/cinema.mjs`: physical colonnades, suspended cut-glass lanterns, light shafts, responsive dhol dais and the lotus sculpture, sharing the world renderer.
 - `src/beyond/world.mjs`: Three.js doors, dhol, meadow, infinity/light sculpture, animated environment plates and architectural passages. Static geometry is batched by material while hinges, membranes and tassels remain independent.
 - `src/beyond/layout.mjs`: source-ratio photo mat fitting.
 - `src/beyond/phulkari.mjs`: seeded embroidery, stitch animation and PNG card.
@@ -80,4 +85,4 @@ The local publication checkout is `publication/github-pages/`; it has its own Gi
 
 ## Credits
 
-Three.js is MIT licensed; see `THREE-LICENSE.txt`. Cormorant Garamond, Manrope and Noto Serif Gurmukhi include their SIL Open Font Licenses in `assets/noor/fonts/`. All brand and commission links lead to [Invite Wonderland on Instagram](https://www.instagram.com/invitewonderland).
+Three.js is MIT licensed; see `THREE-LICENSE.txt`. Bodoni Moda and DM Sans include their SIL Open Font Licenses in `assets/beyond/fonts/`; Noto Serif Gurmukhi retains its license in `assets/noor/fonts/`. All brand and commission links lead to [Invite Wonderland on Instagram](https://www.instagram.com/invitewonderland).

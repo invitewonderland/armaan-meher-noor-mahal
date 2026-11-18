@@ -15,10 +15,11 @@
   <link rel="canonical" href="https://invitewonderland.github.io/armaan-meher-noor-mahal/">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/noor/monogram.svg" type="image/svg+xml">
-  <link rel="preload" as="font" href="assets/noor/fonts/cormorant-garamond-normal-latin.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/beyond/day-palace.webp" fetchpriority="high">
+  <link rel="preload" as="font" href="assets/beyond/fonts/bodoni.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/beyond/hall-v4.webp" fetchpriority="high">
+  <link rel="preload" as="font" href="assets/beyond/fonts/dm-sans.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="noor-fonts.css">
-  <link rel="stylesheet" href="beyond.css">
+  <link rel="stylesheet" href="beyond-v4.css">
   <title>Armaan & Meher · Beyond Infinity</title>
   <script defer src="js/beyond.bundle.js"></script>
 </head>
@@ -31,11 +32,11 @@
   <symbol id="infinity" viewBox="0 0 140 60"><path d="M70 30C40-9 6-2 6 30s34 39 64 0 64-32 64 0-34 39-64 0Z" fill="none" stroke="currentColor" stroke-width=".8"/></symbol>
 </defs></svg>
 <audio id="soundtrack" src="assets/audio/A_Canopy_of_White_Roses.mp3" preload="none" loop></audio>
-<div class="experience" id="experience" data-room="0" data-ready="false" data-transitioning="false">
-  <div class="world-fallback" aria-hidden="true"><img src="assets/beyond/day-palace.webp" alt="" width="1672" height="941"></div>
+<div class="experience" id="experience" data-room="0" data-phase="sealed" data-ready="false" data-transitioning="false">
+  <div class="world-fallback" aria-hidden="true"><img src="assets/beyond/hall-v4.webp" alt="" width="941" height="1672"></div>
   <canvas id="worldCanvas" aria-hidden="true"></canvas>
   <div class="world-wash" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div><div class="transition-veil" aria-hidden="true"></div><div class="cinema-rules" aria-hidden="true"></div>
   <header class="masthead">
     <a class="brand" href="https://www.instagram.com/invitewonderland" target="_blank" rel="noopener noreferrer" aria-label="Invite Wonderland on Instagram"><svg aria-hidden="true"><use href="#flower"/></svg><span>INVITE<br><b>WONDERLAND</b></span></a>
     <button id="openMap" class="edition" aria-expanded="false" aria-controls="palaceMap"><span>NOOR MAHAL</span><small>THE PALACE OF FOREVER</small></button>
@@ -52,10 +53,10 @@
     </section>
 
     <section class="room story" data-room="1" aria-labelledby="storyTitle" hidden inert tabindex="-1">
-      <div class="story-copy room-copy"><p class="eyebrow" id="storyKicker">I · WHEN TWO WORLDS BECOME ONE</p><h2 id="storyTitle">And then,<br>there was <em>you.</em></h2><p class="body-copy" id="storyLine">Of all the places our hearts could have called home,<br>they chose each other.</p><span class="script" id="storyScript">In this life. In every life.</span><div class="photo-counter"><b id="photoNumber">01</b><span>EIGHT MOMENTS.<br>ONE BEAUTIFUL FOREVER.</span></div></div>
+      <div class="story-copy room-copy"><p class="eyebrow" id="storyKicker">I · WHEN TWO WORLDS BECOME ONE</p><h2 id="storyTitle">And then,<br>there was <em>you.</em></h2><p class="body-copy" id="storyLine">Of all the places our hearts could have called home,<br>they chose each other.</p><span class="script" id="storyScript">In this life. In every life.</span><div class="story-rootline" id="storyRootline" hidden><span lang="pa">ਰੂਹ ਤੋਂ ਰੂਹ ਤੱਕ</span><span>From one soul to another.</span></div><div class="photo-counter"><b id="photoNumber">01</b><span>EIGHT MOMENTS.<br>ONE BEAUTIFUL FOREVER.</span></div></div>
       <div class="story-photo-wrap"><figure class="heirloom-photo" id="storyFrame"><div class="photo-inner"><img id="storyImage" src="assets/noor/together-thumb.webp" alt="Armaan and Meher resting their heads together in the palace gardens" width="1199" height="1312" decoding="async"></div><figcaption><span id="photoCaption">Where the world feels like home.</span><b>A <i>&</i> M</b></figcaption><span class="corner corner-tl"></span><span class="corner corner-br"></span><button id="enlargePhoto" class="photo-enlarge" aria-label="View the complete photograph fullscreen"><svg aria-hidden="true"><use href="#fullscreenIcon"/></svg></button></figure><button class="photo-arrow photo-previous" id="previousPhoto" aria-label="Previous photograph">‹</button><button class="photo-arrow photo-next" id="nextPhoto" aria-label="Next photograph">›</button></div>
       <div class="photo-rail" id="photoRail" role="group" aria-label="The eight moments of Armaan and Meher"></div>
-      <div class="story-rootline" id="storyRootline" hidden><span lang="pa">ਰੂਹ ਤੋਂ ਰੂਹ ਤੱਕ</span><span>From one soul to another.</span></div>
+
     </section>
 
     <section class="room celebrations" data-room="2" aria-labelledby="eventTitle" hidden inert tabindex="-1">
@@ -75,11 +76,11 @@
       <div class="blessing-copy room-copy"><p class="eyebrow">IV · A PHULKARI OF BLESSINGS</p><h2 id="blessingTitle">Your words.<br>Our <em>beautiful thread.</em></h2><p class="body-copy">In the spirit of phulkari, every blessing<br>becomes a pattern shaped by your own words.</p></div>
       <div class="phulkari-wrap" id="phulkariWrap"><div class="fabric-top"></div><canvas id="phulkariCanvas" aria-label="A phulkari-inspired embroidery that is individually shaped by the words of your blessing"></canvas><div class="fabric-fringe" aria-hidden="true"></div><span class="fabric-signature">WOVEN WITH LOVE · A & M</span></div>
       <form id="blessingForm" class="blessing-form"><div class="input-row"><label for="guestName">YOUR NAME <small>OPTIONAL</small></label><input id="guestName" maxlength="40" autocomplete="given-name" placeholder="A name they love…"></div><div class="input-row"><label for="blessingText">A FEW WORDS FROM YOUR HEART</label><textarea id="blessingText" maxlength="180" rows="2" required placeholder="May your forever be filled with…"></textarea></div><button class="solid-button" type="submit">Turn my words into a little wonder <svg aria-hidden="true"><use href="#flower"/></svg></button><p class="privacy-note">A private keepsake. Saved only on this device.</p></form>
-      <div class="blessing-result" id="blessingResult" hidden><p class="eyebrow">NOW YOUR LOVE IS PART OF THE PATTERN</p><blockquote id="savedBlessing"></blockquote><p id="savedGuest"></p><div class="blessing-actions"><button class="line-button" id="saveBlessing">Keep this little wonder <span aria-hidden="true">↓</span></button><button class="line-button" id="anotherBlessing">Weave another <span aria-hidden="true">↗</span></button></div><button class="clear-blessings" id="clearBlessings">Clear my saved blessings</button><p class="privacy-note" id="blessingPrivacy">Saved only on this device.</p></div>
+      <div class="blessing-result" id="blessingResult" hidden><p class="eyebrow">NOW YOUR LOVE IS PART OF THE PATTERN</p><blockquote id="savedBlessing" tabindex="0"></blockquote><p id="savedGuest"></p><div class="blessing-actions"><button class="line-button" id="saveBlessing">Keep this little wonder <span aria-hidden="true">↓</span></button><button class="line-button" id="anotherBlessing">Weave another <span aria-hidden="true">↗</span></button></div><button class="clear-blessings" id="clearBlessings">Clear my saved blessings</button><p class="privacy-note" id="blessingPrivacy">Saved only on this device.</p></div>
     </section>
 
     <section class="room letter" data-room="5" aria-labelledby="letterTitle" hidden inert tabindex="-1">
-      <figure class="ceremony-photo heirloom-photo"><div class="photo-inner"><img id="ceremonyImage" src="assets/noor/anand-thumb.webp" alt="Armaan and Meher seated together during their Anand Karaj beneath a golden canopy" width="1254" height="1254" decoding="async"></div><figcaption><span>The Anand Karaj.</span><svg aria-hidden="true"><use href="#flower"/></svg></figcaption><button class="photo-enlarge" id="enlargeCeremony" aria-label="View the complete Anand Karaj photograph"><svg aria-hidden="true"><use href="#fullscreenIcon"/></svg></button></figure>
+      <figure class="ceremony-photo heirloom-photo"><div class="photo-inner"><img id="ceremonyImage" src="assets/noor/anand-thumb.webp" alt="Armaan and Meher seated together during their Anand Karaj beneath a golden canopy" width="1254" height="1254" decoding="async"></div><figcaption><span>Anand Karaj</span><svg aria-hidden="true"><use href="#flower"/></svg></figcaption><button class="photo-enlarge" id="enlargeCeremony" aria-label="View the complete Anand Karaj photograph"><svg aria-hidden="true"><use href="#fullscreenIcon"/></svg></button></figure>
       <div class="royal-letter" id="royalLetter"><div class="letter-border" aria-hidden="true"></div><svg class="letter-flower" aria-hidden="true"><use href="#flower"/></svg><p class="eyebrow">V · A LETTER FROM OUR HEARTS</p><h2 id="letterTitle">The greatest gift<br>is <em>having you there.</em></h2><p class="letter-names">Armaan Singh <i>&</i> Meher Kaur</p><p class="body-copy">With the blessings of our families,<br>we invite you to celebrate our wedding.</p><div class="letter-date"><strong>20</strong><div><span>DECEMBER 2026</span><p>Sunday · Anand Karaj · 10:00 AM</p></div></div><p class="letter-place">The Darbar Sahib · Noor Mahal, Patiala</p><p class="script">Our celebration is incomplete without you.</p><div class="letter-actions"><button class="solid-button" id="openKeepsake">A little piece of our forever <svg aria-hidden="true"><use href="#arrow"/></svg></button><button class="line-button" id="ceremonyCalendar">Keep the date <span aria-hidden="true">↓</span></button></div><span class="letter-footnote">18–20 DECEMBER · THREE DAYS TO REMEMBER</span></div>
     </section>
 
