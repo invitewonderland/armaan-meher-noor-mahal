@@ -1,4 +1,4 @@
-# Armaan & Meher — Noor Mahal / The Royal Atelier
+# Armaan & Meher — Noor Mahal / The Woven Light
 
 A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. This is a complete new experience built on the Project Infinity technical foundation, with eight intact couple photographs, original palace environments and seven connected rooms.
 
@@ -16,9 +16,15 @@ A living royal Punjabi palace, imagined and crafted by **Invite Wonderland**. Th
 
 A fine golden thread, a silk-like light veil and three architectural archways connect the rooms. Physical columns and hanging glass lanterns add a foreground depth layer. Touching the palace water sends expanding ripples into the reflection. The dhol now floats above a dimensional emerald-and-gold ceremonial platform whose rings respond to each note. A sixteen-petal lotus sculpture surrounds the final portrait and opens into the rising constellation. The palace transforms between the mirrored hall, dawn courtyard, luminous blue hour and moonlit water garden. These effects support the place and story; the guest controls the pace.
 
-## Royal Atelier refinement
+## The Woven Light refinement
 
-Solid ivory gate lettering with horizontal family names, fuller Fraunces display type, themed celebration folios and portrait invitation cards, a gilded embroidery loom with dimensional stitches, and a portrait-topped formal letter. Text sits on intentionally lit ivory or emerald surfaces. One-pass floor caustics and peripheral mirror glints share the existing shaders; no extra renderer or particle system.
+Gate names are synchronously removed with the hidden attribute before the door animation begins, with explicit opening/journey display guards. Returning to the seal restores them. All four celebration dialogs now give the complete original photograph a full-width hero presentation, progressively upgraded to its lossless master. Sticky close controls and native internal scrolling preserve access to the details and calendar.
+
+The formal letter contains a substantially larger portrait within its paper. Its complete text and keepsake controls fit taller phones; compact screens and landscape support internal reading scroll rather than compressing the words or cropping the photograph.
+
+The phulkari uses an all-over bagh-inspired geometric stitch field, including the centre and every quadrant. A curved golden shuttle reveals the whole fabric over 4.8 seconds. Two cached canvas layers hold the cloth and embroidery, so each animated frame composites those layers with one light front and twelve tiny glints. The animation stops on completion, leaving the chapter, or hiding the page; reduced motion draws the finished cloth immediately. Blessings still stay only on the guest's device.
+
+The finale adds fine moving gold orbits, restrained carved lotus petals, soft peripheral shader light and a written infinity flourish. These share the existing WebGL renderer and loop. Text has its own foreground stacking layers, separate from the portrait afterglow. Existing room transitions, sound, rhythm, sharing, complete-photo viewer, keepsakes and replay remain available.
 
 ## Controls
 

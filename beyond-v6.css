@@ -1,0 +1,127 @@
+/* NOOR MAHAL / THE WOVEN LIGHT — complete portraits, living thread, an afterglow. */
+/* Names are removed before the first moving door frame, including on slow devices. */
+.experience[data-phase="opening"] .gate-copy,.experience[data-phase="journey"] .gate-copy{display:none!important;opacity:0!important;visibility:hidden!important;transition:none!important;animation:none!important}
+.gate-copy[hidden]{display:none!important}
+
+/* The photograph is the heart of each open celebration invitation. */
+.event-dialog{width:540px;scrollbar-width:thin;scrollbar-color:#b38a48 #f6e8ce;overscroll-behavior:contain;scroll-padding-top:60px}
+.event-dialog .dialog-close{position:sticky;float:right;top:12px;margin:12px 12px -48px 0;z-index:20;background:#fffae9;box-shadow:0 3px 12px #082c254d}
+.event-invitation-head{padding:24px 28px 22px}
+.invitation-emblem{width:38px;height:38px;margin-bottom:10px}
+.event-invitation-head h2{font-size:43px;margin:10px 0}
+.event-invitation-head .dialog-verse{font-size:18px;max-width:400px}
+.invitation-edition{margin-top:13px;letter-spacing:1.5px}
+.event-card-body{display:flex;flex-direction:column;gap:0;padding:25px 30px 28px;text-align:center}
+.invitation-portrait{width:100%;max-width:390px;align-self:center;transform:none;padding:8px 8px 31px;background:linear-gradient(135deg,#fffdf3,#eed8ad);box-shadow:0 14px 30px #6243212e,inset 0 0 0 4px #fff7e6;flex:none}
+.invitation-portrait:after{content:'';position:absolute;inset:4px;border:1px solid #b8924c70;pointer-events:none}
+.invitation-portrait img{width:100%;height:auto;max-height:none;object-fit:contain;display:block}
+.invitation-portrait figcaption{font-size:13px;bottom:7px;font-weight:450}
+.invitation-dedication{font-size:23px;line-height:1.45;margin-top:22px;align-self:center}
+.invitation-dedication br{display:none}.invitation-dedication br:after{content:' '}
+.event-card-body .event-facts{width:100%;margin:20px 0;text-align:left}
+.event-card-body>.solid-button{flex:none}
+.event-card-body .dialog-signature{font-size:17px;margin-top:20px;line-height:1.5}
+.event-dialog[open] .invitation-portrait{animation:folioPortrait 1.25s var(--ease) both}
+@keyframes folioPortrait{from{opacity:.2;translate:0 16px}to{opacity:1;translate:0 0}}
+
+/* A whole illuminated letter: the portrait lives inside its paper, never in a thumbnail. */
+.letter{display:block;padding:18px 6%}
+.royal-letter{position:relative;inset:auto;max-height:none;width:100%;height:100%;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:5%;padding:32px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b38a48 #f6e8ce;align-items:center;justify-content:normal}
+.letter-message{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;position:relative;z-index:1}
+.letter-message>*{flex-shrink:0}
+.ceremony-photo{position:relative;inset:auto;left:auto;top:auto;right:auto;transform:none;width:100%;height:100%;max-height:590px;max-width:100%;margin:0;align-self:center;justify-self:center;padding:9px 9px 41px;z-index:1;flex:none}
+.ceremony-photo figcaption{left:12px;bottom:9px;min-height:20px}.ceremony-photo figcaption>span{font-size:13px;line-height:1.3}
+.ceremony-photo .photo-enlarge{width:30px;height:30px;right:6px;bottom:5px}.ceremony-photo:has(>.photo-enlarge) figcaption{right:43px}
+.letter-border{z-index:0;inset:10px;pointer-events:none}.letter-border:before,.letter-border:after{display:none}
+.letter-flower{height:30px;width:30px;margin:0 0 12px;color:#a6782f}
+.royal-letter h2{font-size:clamp(30px,3.1vw,49px);line-height:1.13;margin:13px 0}
+.letter-message>.eyebrow{font-size:10px;letter-spacing:1px}
+.letter-names{font-size:clamp(18px,1.7vw,26px);line-height:1.5}
+.royal-letter .body-copy{font-size:14px;line-height:1.6;margin-top:13px}
+.letter-date{padding:10px 11px;margin-top:17px;gap:13px;max-width:100%}
+.letter-date>strong{font-size:43px}.letter-date span{font-size:10px}.letter-date p{font-size:12px;line-height:1.5}
+.letter-place{font-size:12px;line-height:1.6;margin-top:10px}
+.letter-message>.script{display:block;font-size:19px;line-height:1.45;margin-top:15px;color:#76501d}
+.letter-actions{margin-top:17px;gap:9px}.letter-actions>.solid-button{font-size:12px;max-width:none}
+.letter-footnote{display:block;font-size:9px;margin-top:14px;line-height:1.5}
+.letter-seal{position:relative;inset:auto;width:36px;height:36px;font-size:10px;margin-top:13px;align-self:center}
+
+/* Silk light catches complement the actual animated stitches in the canvas. */
+.phulkari-wrap{background:linear-gradient(120deg,#9e743b,#f2d99a 10%,#a37636 13%,#ebcd89 17%,#c49b55 80%,#ffedba 90%,#986830);box-shadow:0 25px 45px #361c3533,0 0 0 4px #9f713841,inset 0 0 0 3px #fff0bc}
+.phulkari-wrap:after{mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 15%,#ffe9c21c 42%,transparent 75%)}
+.phulkari-wrap.is-weaving{animation:loomBreathe 4.8s var(--ease) both}
+@keyframes loomBreathe{0%{box-shadow:0 25px 45px #361c3533,0 0 0 4px #9f713841}35%{box-shadow:0 22px 48px #6d3c3e44,0 0 24px #e4bb6b70}100%{box-shadow:0 25px 45px #361c3533,0 0 0 4px #9f713841}}
+.fabric-signature{font-weight:700;color:#413017;text-shadow:0 1px #ffe6ae}
+.blessing-result{background:linear-gradient(135deg,#fffaf0fa,#f6e7ccf7)}
+.blessing-result blockquote{max-height:155px;line-height:1.45;font-size:25px;scrollbar-width:thin;scrollbar-color:#ac874c transparent}
+
+/* A luminous final portrait with a quieter, finer lotus and an orbital afterglow. */
+.forever-heading{isolation:isolate;background:radial-gradient(ellipse,#fff9edee 15%,#fff9edaa 50%,transparent 78%)}
+.forever-photo{transform:rotate(.7deg);transition:transform 3.8s var(--ease),box-shadow 3.8s,background 3.8s}
+.forever-photo:after{border-image:linear-gradient(135deg,#fff3bf,#c49a4c 30%,#fff3bf 55%,#c49a4c 80%,#fff3bf) 1}
+.forever.is-flying .forever-photo{transform:rotate(0deg) translateY(-3px);box-shadow:0 18px 44px #6646213b,0 0 0 4px #fff1be99,0 0 48px #ffe4a36b}
+.forever.is-flying .forever-photo:after{animation:afterglow 4s ease-out both}
+@keyframes afterglow{0%{opacity:.3}45%{opacity:1;box-shadow:0 0 26px #f5d290bb}100%{opacity:.85;box-shadow:0 0 12px #f5d29044}}
+.forever-dedication>.script{color:#67491d;font-weight:450;text-shadow:0 1px #fff9e8}
+.flight-button{position:relative;overflow:hidden;isolation:isolate}
+.flight-button:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#fffceba6 48%,transparent 76%);translate:-110% 0}
+.forever.is-flying .flight-button:before{animation:foreverSweep 3.8s var(--ease) both}
+@keyframes foreverSweep{to{translate:110% 0}}
+.forever.is-flying .flight-button>svg{stroke-dasharray:340;animation:infinityWritten 3s var(--ease) both}
+@keyframes infinityWritten{from{stroke-dashoffset:340;opacity:.2}to{stroke-dashoffset:0;opacity:1}}
+.forever-actions{padding:3px 11px;background:radial-gradient(ellipse,#fff7e9ed,transparent 80%)}
+.forever-actions .line-button{color:#1a4438}
+.forever-photo{z-index:1}
+.forever-heading,.forever-dedication,.forever-actions,.closing-credit{z-index:3;isolation:isolate}
+.room.arriving .royal-letter{animation:invitationOpen 1.15s var(--ease) both}
+
+@media(max-width:900px) and (orientation:portrait){
+ .event-dialog{width:510px;max-width:calc(100% - 22px);max-height:94dvh}
+ .event-invitation-head{padding:22px 23px 20px}.event-invitation-head h2{font-size:37px;margin:9px 0}.event-invitation-head .dialog-verse{font-size:17px;line-height:1.5}
+ .invitation-emblem{width:32px;height:32px;margin-bottom:9px}.invitation-emblem>span{font-size:10px}.invitation-edition{font-size:8px;margin-top:12px}
+ .event-card-body{padding:21px 20px 24px}.invitation-portrait{max-width:370px;padding:7px 7px 29px}.invitation-portrait figcaption{font-size:12px;bottom:6px}
+ .invitation-dedication{font-size:20px;margin-top:19px}.event-facts dd{font-size:13px;line-height:1.6}.event-card-body .event-facts{margin:18px 0;padding:17px 0}
+ .event-card-body .dialog-signature{font-size:16px}.event-card-body>.solid-button{font-size:12px;min-height:46px}
+ .celebrations{gap:8px;padding-top:10px}.event-photo{max-height:530px;max-width:97%}
+ .event-copy{padding:11px 14px 10px}.event-copy>.eyebrow{font-size:9px;margin-bottom:2px}.event-copy>.line-button{margin-top:7px}
+ .blessing{gap:15px}.blessing-result blockquote{font-size:21px;max-height:135px;margin:12px 0}
+ .letter{display:block;padding:11px 5% 12px}
+ .royal-letter{inset:auto;left:auto;right:auto;top:auto;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:14px;width:100%;height:100%;padding:17px 17px 16px;overflow-y:auto}
+ .ceremony-photo{inset:auto;left:auto;top:auto;height:clamp(220px,32dvh,340px);width:auto;max-height:none;max-width:100%;flex-shrink:0;padding:7px 7px 34px;transform:none}
+ .ceremony-photo figcaption{left:10px;bottom:7px}.ceremony-photo figcaption>span{font-size:11px}.ceremony-photo .photo-enlarge{width:27px;height:27px;bottom:4px;right:5px}
+ .letter-message{width:100%;flex-shrink:0;gap:0}
+ .letter-message>.eyebrow{font-size:9px;letter-spacing:.7px}.letter-flower{display:none}
+ .royal-letter h2{font-size:29px;line-height:1.14;margin:10px 0}.letter-names{font-size:18px;line-height:1.45}
+ .royal-letter .body-copy{font-size:12px;line-height:1.55;margin-top:11px}
+ .letter-date{margin-top:13px;padding:9px 8px;width:100%;max-width:340px;gap:12px;justify-content:center}.letter-date>strong{font-size:37px}.letter-date span{font-size:9px;letter-spacing:.6px}.letter-date p{font-size:11px;line-height:1.5}
+ .letter-place{font-size:11px;margin-top:9px;line-height:1.5}.letter-message>.script{font-size:15px;line-height:1.45;margin-top:12px}
+ .letter-actions{flex-direction:row;gap:12px;margin-top:13px;width:100%;max-width:360px}.letter-actions>.solid-button{font-size:11px;line-height:1.4;min-height:41px;max-width:72%;padding:10px 12px;gap:9px}.letter-actions>.solid-button svg{width:25px}.letter-actions>.line-button{font-size:11px;line-height:1.4;min-height:38px;gap:7px;white-space:normal}
+ .letter-footnote{display:none}.letter-seal{display:none}
+ .forever{gap:9px}.forever-photo{max-width:88%;max-height:440px;transform:rotate(.7deg)}
+ .forever-heading h2{font-size:clamp(31px,8.8vw,44px)}.forever-actions{gap:26px;padding:2px 9px}.forever-actions .line-button{font-size:12px}
+}
+@media(max-width:900px) and (max-height:740px) and (orientation:portrait){
+ .event-invitation-head{padding:20px 22px 18px}.event-invitation-head h2{font-size:35px}.invitation-emblem{width:29px;height:29px;margin-bottom:8px}.event-invitation-head .dialog-verse{font-size:16px}
+ .event-card-body{padding:19px 19px 23px}.invitation-portrait{padding-bottom:28px}.event-copy>.eyebrow{font-size:8px}
+ .blessing{gap:13px}.blessing-copy h2{font-size:30px}.blessing-copy .body-copy{font-size:11px}.blessing-result blockquote{font-size:19px;max-height:105px;margin:9px 0}
+ .letter{padding:9px 5%}.royal-letter{gap:14px;padding:15px 15px 20px}.ceremony-photo{height:clamp(210px,32dvh,280px);padding-bottom:32px}
+ .royal-letter h2{font-size:27px;margin:9px 0}.letter-names{font-size:17px}.royal-letter .body-copy{font-size:12px;margin-top:10px}.letter-date{margin-top:12px;padding:8px}.letter-date>strong{font-size:34px}.letter-date span{font-size:9px}.letter-date p,.letter-place{font-size:11px}.letter-message>.script{font-size:14px;line-height:1.5;margin-top:11px}.letter-actions{margin-top:12px}.letter-actions>.solid-button,.letter-actions>.line-button{font-size:11px}
+ .forever-heading h2{font-size:32px}.forever-photo{max-width:88%}.forever-actions .line-button{font-size:11px}
+}
+@media(max-width:360px) and (orientation:portrait){
+ .event-invitation-head h2{font-size:31px}.event-invitation-head>.eyebrow{font-size:8px;letter-spacing:.7px}.event-card-body{padding:17px}.invitation-dedication{font-size:18px}.event-facts dd{font-size:12px}.event-card-body>.solid-button{font-size:11px}
+ .blessing-copy h2{font-size:26px}.blessing-result blockquote{font-size:18px;max-height:110px}.blessing-actions{gap:12px}
+ .royal-letter{padding:14px 13px 18px;gap:13px}.ceremony-photo{height:210px}.royal-letter h2{font-size:25px}.letter-names{font-size:16px}.royal-letter .body-copy{font-size:11px}.letter-date p,.letter-place{font-size:10px}.letter-actions>.solid-button,.letter-actions>.line-button{font-size:10px}.letter-message>.eyebrow{font-size:8px}.letter-message>.script{font-size:13px}
+ .forever-heading h2{font-size:28px}.forever-actions .line-button{font-size:10px}
+}
+@media(min-width:600px) and (max-width:900px) and (orientation:portrait){
+ .royal-letter{padding:25px 35px;gap:20px}.ceremony-photo{height:clamp(260px,31dvh,380px)}.letter-message>.eyebrow{font-size:11px}.royal-letter h2{font-size:40px}.letter-names{font-size:25px}.royal-letter .body-copy{font-size:16px}.letter-date{max-width:460px}.letter-date>strong{font-size:48px}.letter-date p,.letter-place{font-size:14px}.letter-date span{font-size:12px}.letter-message>.script{font-size:21px}.letter-actions{max-width:470px}.letter-actions>.solid-button,.letter-actions>.line-button{font-size:14px}.letter-actions>.solid-button{min-height:48px}.blessing-result blockquote{font-size:27px;max-height:170px}
+}
+@media(orientation:landscape) and (max-height:600px){
+ .event-dialog{width:570px;max-height:94dvh}.event-invitation-head{padding:19px 24px}.event-invitation-head h2{font-size:34px}.event-invitation-head .dialog-verse{font-size:17px}.invitation-emblem{width:30px;height:30px}.event-card-body{padding:20px 27px}.invitation-portrait{max-width:345px}
+ .letter{padding:8px 6%}.royal-letter{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:5%;padding:15px 20px;align-items:start;overflow-y:auto}.ceremony-photo{height:235px;width:100%;max-width:100%;padding:6px 6px 32px;align-self:start}.ceremony-photo figcaption>span{font-size:10px}.ceremony-photo .photo-enlarge{height:25px;width:25px}
+ .letter-message{padding:2px 0 10px}.letter-message>.eyebrow{font-size:9px}.royal-letter h2{font-size:25px;margin:7px 0}.letter-names{font-size:16px}.royal-letter .body-copy{font-size:11px;line-height:1.35;margin-top:7px}.letter-date{margin-top:9px;padding:6px;gap:9px}.letter-date>strong{font-size:29px}.letter-date span{font-size:9px}.letter-date p{font-size:10px;line-height:1.3}.letter-place{font-size:10px;margin-top:7px}.letter-message>.script{display:block;font-size:13px;line-height:1.35;margin-top:8px}.letter-actions{flex-direction:row;max-width:none;margin-top:10px;gap:10px}.letter-actions>.solid-button{min-height:33px;padding:7px 9px;font-size:10px!important;max-width:70%}.letter-actions>.line-button{font-size:10px!important;white-space:normal}.letter-footnote,.letter-flower,.letter-seal{display:none}
+ .blessing-result blockquote{font-size:18px;max-height:70px}.forever-actions{padding:0;background:none}
+}
+.keyboard-open .blessing-copy,.keyboard-open .phulkari-wrap{display:none}
+@media(prefers-reduced-motion:reduce){.event-dialog[open] .invitation-portrait,.phulkari-wrap.is-weaving,.forever.is-flying .forever-photo:after,.forever.is-flying .flight-button:before,.forever.is-flying .flight-button>svg{animation:none!important}.forever-photo,.forever.is-flying .forever-photo{transform:none;transition:none}}
